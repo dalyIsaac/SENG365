@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Application</title>
+    </head>
+    <body>
+        <div id="app">
+            <ol>
+                <li v-for="user in users">
+                    {{ user.username }}
+                    <button v-on:click="deleteUser(user)">Delete</button>
+                </li>
+            </ol>
+
+            <h2>Add a new user</h2>
+            <form v-on:submit="addUser">
+                <input v-model="username" placeholder="Username" />
+                <input type="submit" value="Add" />
+            </form>
+        </div>
+        <script src="./node_modules/vue/dist/vue.js"></script>
+        <script src="./node_modules//vue-resource//dist/vue-resource.js"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>
